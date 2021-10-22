@@ -1,0 +1,5 @@
+@import "src/styles/extends";
+
+.info {
+  @extend %hello-screen;
+}

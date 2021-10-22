@@ -1,0 +1,5 @@
+@mixin media($width-value: 1100px) {
+  @media (max-width: $width-value) {
+    @content;
+  };
+};

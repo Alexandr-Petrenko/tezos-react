@@ -1,0 +1,15 @@
+@import "src/styles/variables";
+
+.header {
+  padding: 25px 0;
+  background: $c-main-blue;
+  color: $c-white-text;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+}
