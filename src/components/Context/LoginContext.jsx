@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect, useContext } from 'react';
+import { createContext, useState, useEffect, useContext, useMemo } from 'react';
 import PropTypes from 'prop-types';
 
 const LoginContext = createContext();
@@ -81,18 +81,25 @@ export const LoginProvider = ({ children }) => {
   useEffect(() => checkPassword(), [password]);
   useEffect(() => checkPassMatch(), [passwordConfirmation]);
 
+  const formValue = useMemo(
+    () => ({
+      verifyForm,
+      INPUTS_CONFIG,
+      setIsEmailValid,
+      setIsPasswordValid,
+      setIsPasswordMatch,
+    }),
+    [
+      verifyForm,
+      INPUTS_CONFIG,
+      setIsEmailValid,
+      setIsPasswordValid,
+      setIsPasswordMatch,
+    ],
+  );
+
   return (
-    <LoginContext.Provider
-      value={{
-        verifyForm,
-        INPUTS_CONFIG,
-        setIsEmailValid,
-        setIsPasswordValid,
-        setIsPasswordMatch,
-      }}
-    >
-      {children}
-    </LoginContext.Provider>
+    <LoginContext.Provider value={formValue}>{children}</LoginContext.Provider>
   );
 };
 

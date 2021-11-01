@@ -1,5 +1,23 @@
 @import "src/styles/extends";
+@import "src/styles/mixins";
 
 .info {
   @extend %hello-screen;
+
+  &__company {
+    @include media(1207px) {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @include media(1207px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
 }

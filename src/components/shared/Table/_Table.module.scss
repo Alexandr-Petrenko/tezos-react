@@ -1,6 +1,6 @@
 @import "/src/styles/mixins";
 
-.scrollTableBody {
+.scroll__table-body {
   width: 804px;
   height: 300px;
   overflow-x: auto;
@@ -14,7 +14,7 @@
     height: auto;
   }
 }
-.scrollTable table {
+.scroll__table table {
   border-spacing: 0;
   width: 798px;
   table-layout: fixed;
@@ -25,7 +25,7 @@
     max-width: 798px;
   }
 }
-.scrollTable thead th {
+.scroll__table thead th {
   width: 103px;
   font-weight: bold;
   text-align: center;
@@ -46,7 +46,7 @@
     font-size: 5px;
   }
 }
-.scrollTable tbody td {
+.scroll__table tbody td {
   box-sizing: border-box;
   width: 114px;
   text-align: center;

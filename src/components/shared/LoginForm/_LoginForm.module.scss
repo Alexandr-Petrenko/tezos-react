@@ -14,7 +14,7 @@
     padding: 30px 20px;
   }
 
-  &Title {
+  &__title {
     font-size: 36px;
     margin-bottom: 35px;
 
@@ -23,12 +23,12 @@
     }
   }
 
-  &Wrapper {
+  &__wrapper {
     position: relative;
     margin-bottom: 90px;
   }
 
-  &Input {
+  &__input {
     width: 390px;
     height: 60px;
     padding-left: 22px;
@@ -43,12 +43,12 @@
     &::placeholder {
       color: #000;
     }
-    &Error {
+    &__error {
       border: 1px solid #d50d0d;
     }
   }
 
-  &Button {
+  &__button {
     width: 220px;
     height: 50px;
     border-radius: 4px;
@@ -65,22 +65,23 @@
     }
   }
 
-  &Error {
+  &__error {
     position: absolute;
     bottom: -25px;
     left: 1px;
     font-size: 14px;
     color: #d50d0d;
+
     @media (max-width: 625px) {
       font-size: 11px;
     }
-    &Advice {
-      bottom: -75px;
+    &--advice {
+      bottom: -60px;
       color: #000;
     }
   }
 
-  &Placeholder {
+  &__placeholder {
     position: absolute;
     top: -12px;
     left: 22px;

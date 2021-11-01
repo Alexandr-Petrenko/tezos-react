@@ -1,10 +1,17 @@
+@import "mixins";
+
 %hello-screen {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 740px;
 
-  padding: 105px 0;
-  background:  url("../images/main-bg.webp") no-repeat {
+  padding: 50px 5px;
+  background: url("../images/main-bg.webp") no-repeat {
     position: bottom;
   };
+
+  @include media(500px) {
+    padding: 90px 5px;
+  }
 }

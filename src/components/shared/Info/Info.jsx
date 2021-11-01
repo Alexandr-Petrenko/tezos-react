@@ -1,11 +1,14 @@
+import classNames from 'classnames';
 import styles from './_Info.module.scss';
 import Table from '../Table';
-
-const { info } = styles;
+import Company from '../Company';
 
 const Info = () => (
-  <section className={info}>
-    <Table />
+  <section className={styles.info}>
+    <div className={classNames('container', styles.info__container)}>
+      <Company className={styles.info__company} />
+      <Table />
+    </div>
   </section>
 );
 

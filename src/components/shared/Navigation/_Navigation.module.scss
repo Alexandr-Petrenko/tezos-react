@@ -1,24 +1,93 @@
 @import "src/styles/variables";
+@import "src/styles/mixins";
 
 .navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 16px;
   font-weight: 600;
   width: 100%;
-  max-width: 390px;
+  max-width: 285px;
 
-  &List {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+  @include media(500px) {
+    justify-content: flex-end;
   }
 
-  &Login {
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+
+    @include media(500px) {
+      display: none;
+      width: 85px;
+      position: absolute;
+      top: 15px;
+      right: 40px;
+      flex-direction: column;
+
+      background: $c-main-yellow;
+      border-radius: 5px;
+
+      &--is-open {
+        display: block;
+      }
+    }
+  }
+
+  &__link {
+    padding: 0 21px;
+  }
+
+  &__login {
     display: flex;
     justify-content: center;
     align-items: center;
 
     background: $c-main-yellow;
     padding: 20px 75px;
+    height: 0;
+
+    @include media(500px) {
+      background: transparent;
+      padding: 15px;
+      width: 100%;
+    }
+  }
+
+  &__burger {
+    display: none;
+    position: relative;
+    width: 22px;
+    height: 4px;
+    background-color: $c-main-yellow;
+
+    @include media(500px) {
+      display: block;
+    }
+
+    &:before {
+      position: absolute;
+      content: '';
+      bottom: 7px;
+      left: 0;
+      display: block;
+      width: 22px;
+      height: 4px;
+      background-color: $c-main-yellow;
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      top: 7px;
+      left: 0;
+      display: block;
+      width: 22px;
+      height: 4px;
+      background-color: $c-main-yellow;
+    }
   }
 }

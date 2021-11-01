@@ -1,10 +1,8 @@
 import styles from './_LogoCombination.module.scss';
 import Logo from '../Logo';
 
-const { logoCombination } = styles;
-
 const LogoCombination = () => (
-  <a href="#" className={logoCombination}>
+  <a href="#" className={styles.logo__combination}>
     <Logo />
     <span>Tezos4all</span>
   </a>

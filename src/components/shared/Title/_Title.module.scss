@@ -1,0 +1,5 @@
+@import "src/styles/mixins";
+
+.title {
+  @include typography(300, 36px, 49px, #122232);
+}

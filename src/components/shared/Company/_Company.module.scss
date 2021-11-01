@@ -1,0 +1,35 @@
+@import "src/styles/variables";
+@import "src/styles/mixins";
+
+.company {
+  display: flex;
+  flex-direction: column;
+  color: $c-white-text;
+  //max-width: 409px;
+
+  @include media(1207px) {
+    align-items: center;
+
+    text-align: center;
+  }
+
+  &__logo {
+    width: 116px;
+    height: 130px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 54px;
+    line-height: 74px;
+    letter-spacing: 0.045em;
+  }
+
+  &__slogan {
+    display: inline-block;
+    max-width: 392px;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 44px;
+  }
+}

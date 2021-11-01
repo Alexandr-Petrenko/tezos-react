@@ -1,23 +1,9 @@
 const axios = require('axios');
 
-const limit = 15;
-const offset = 0;
+const initialURL = (network) =>
+  `https://api.teztracker.com/v2/data/tezos/${network}`;
 
-const apiData = axios.create({
-  baseURL: 'https://api.teztracker.com/v2/data/tezos/mainnet/',
-  withCredentials: false,
-  headers: {
-    'Content-Type': 'application/json',
-  },
-});
-
-const get = async (url) => {
-  const response = await apiData(url);
-  const { data } = await response;
-
-  return data.slice(offset, limit);
-};
-
-const getBlocks = () => get('blocks');
+const getBlocks = (network = 'mainnet', offset = '0', limit = '15') =>
+  axios.get(`${initialURL(network)}/blocks?limit=${limit}&offset=${offset}`);
 
 export default getBlocks;

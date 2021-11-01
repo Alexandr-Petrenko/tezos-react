@@ -1,21 +1,31 @@
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import classNames from 'classnames';
 import styles from './_Navigation.module.scss';
 
-const { navigation, navigationList, navigationLogin } = styles;
+const Navigation = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-const Navigation = () => (
-  <nav className={navigation}>
-    <ul className={navigationList}>
-      <li>
-        <Link to="home">Home</Link>
-      </li>
-      <li>
-        <Link className={navigationLogin} to="login">
-          Login
-        </Link>
-      </li>
-    </ul>
-  </nav>
-);
+  const visible = isOpen ? styles['navigation__list--is-open'] : '';
+
+  return (
+    <nav className={styles.navigation}>
+      <ul className={classNames(styles.navigation__list, visible)}>
+        <li className={styles.navigation__link}>
+          <Link to="home">Home</Link>
+        </li>
+        <li>
+          <Link className={styles.navigation__login} to="login">
+            Login
+          </Link>
+        </li>
+      </ul>
+      <div
+        className={styles.navigation__burger}
+        onClick={() => setIsOpen(!isOpen)}
+      />
+    </nav>
+  );
+};
 
 export default Navigation;

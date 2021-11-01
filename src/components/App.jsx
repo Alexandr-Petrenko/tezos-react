@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Header from './Header';
+import Header from './shared/Header';
 import '../styles/_index.scss';
 // import Error404 from '../Error404.jsx';
-import { LoginProvider } from './Providers/LoginProvider.jsx';
+import { LoginProvider } from './Context/LoginContext.jsx';
 import Login from './pages/Login';
 import Home from './pages/Home';
 

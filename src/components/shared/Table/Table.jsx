@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
-import { useApi } from '../../Providers/ApiProvider.jsx';
+import { useApi } from '../../Context/ApiContext.jsx';
 import styles from './_Table.module.scss';
-
-const { scrollTableBody, scrollTable } = styles;
 
 const Table = () => {
   const columnsNames = [
@@ -26,7 +24,7 @@ const Table = () => {
   }
 
   return (
-    <div className={scrollTable}>
+    <div className={styles.scroll__table}>
       <table>
         <thead>
           <tr>
@@ -37,7 +35,7 @@ const Table = () => {
           </tr>
         </thead>
       </table>
-      <div className={scrollTableBody}>
+      <div className={styles['scroll__table-body']}>
         <table>
           <tbody>
             {tableData.map((block) => {

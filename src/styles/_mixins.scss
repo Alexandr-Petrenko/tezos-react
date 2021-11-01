@@ -3,3 +3,32 @@
     @content;
   };
 };
+
+@mixin typography($font-weight, $font-size, $line-height, $color: #000) {
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin paragraph-with-padding($padding-left: 16px, $src: "../../../images/check.svg", $max-width: 445px) {
+  display: flex;
+  position: relative;
+  max-width: $max-width;
+  align-items: flex-end;
+  align-self: center;
+
+  text-align: center;
+  padding-left: $padding-left;
+
+  &:before {
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+    content: "";
+    //width: 29px;
+    //height: 28px;
+    background: url($src);
+  }
+}
