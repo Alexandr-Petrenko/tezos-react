@@ -89,7 +89,7 @@ const Skills = () => {
   }
 
   return (
-    <section className={styles.skills}>
+    <section className={styles.skills} id={'skills'}>
       <div className="container">
         <Title content={'Testing skills'} className={styles.skills__title} />
         <div className={styles.skills__item}>
