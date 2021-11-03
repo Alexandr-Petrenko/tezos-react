@@ -30,7 +30,7 @@ const Skills = () => {
   useEffect(() => {
     window.addEventListener('resize', updateWidth);
     return () => window.removeEventListener('resize', updateWidth);
-  });
+  }, []);
 
   if (width <= 980) {
     return (
